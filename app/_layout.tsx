@@ -1,25 +1,43 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { Slot, Stack } from 'expo-router'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native';
+import { Slot, SplashScreen, Stack } from 'expo-router';
+import { useFonts } from 'expo-font';
+import React, { useEffect } from 'react';
+
+SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Header</Text>
-      <Slot />
-    </View>
-  )
-}
+	const [fontsLoaded, error] = useFonts({
+		ClashDisplayMedium: require('../assets/fonts/ClashDisplayMedium.otf'),
+		ClashDisplayRegular: require('../assets/fonts/ClashDisplayRegular.otf'),
+    ClashDisplayBold: require('../assets/fonts/ClashDisplayBold.otf'),
+    ClashDisplaySemibold: require('../assets/fonts/ClashDisplaySemibold.otf'),
+    ClashDisplayLight: require('../assets/fonts/ClashDisplayLight.otf'),
+    ClashDisplayExtralight: require('../assets/fonts/ClashDisplayExtralight.otf')
+    
+	});
 
-export default RootLayout
+	useEffect(() => {
+		if (error) throw error;
+
+		if (fontsLoaded) SplashScreen.hideAsync();
+	}, [fontsLoaded, error]);
+
+  if (!fontsLoaded && !error) return null;
+	return (
+		<View style={styles.container}>
+			<Text>Header</Text>
+			<Slot />
+		</View>
+	);
+};
+
+export default RootLayout;
 
 const styles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-
-  }
+	container: {
+		display: 'flex',
+		flex: 1,
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
 });
-
