@@ -1,14 +1,79 @@
-node_modules/
-.expo/
-dist/
-npm-debug.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-*.orig.*
-web-build/
+# Expo & React Native .gitignore
 
-# macOS
+# Node modules and dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# Expo/React Native generated
+expo-env.d.ts
+.expo/
+
+# OS files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE/Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+
+# Build outputs
+ios/build/
+android/build/
+android/app/build/
+
+# Debug logs
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+# Secrets
+*.env
+*.env.*
+
+# Caches
+*.DS_Store
+*.expo/*
+
+# Watchman
+.watchmanconfig
+
+# Metro bundler cache
+metro.config.tmp
+metro-bundler-cache-*
+
+# Temporary files created by the editor
+*~
+*.lock
+
+# Yarn
+.yarn/
+.pnp.*
+
+# Gradle
+.android/
+.gradle/
+build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**
+
+# Others
+*.orig
+*.bak
+*.tmp
