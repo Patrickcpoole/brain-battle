@@ -24,10 +24,9 @@ const RootLayout = () => {
 
   if (!fontsLoaded && !error) return null;
 	return (
-		<View style={styles.container}>
-			<Text>Header</Text>
-			<Slot />
-		</View>
+		<Stack>
+      <Stack.Screen name='index' options={{headerShown: false}} />
+    </Stack>
 	);
 };
 
