@@ -7,7 +7,7 @@ import {
 	TouchableOpacity,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { Link } from 'expo-router';
+import { Link, router} from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import images from '../constants/images';
@@ -33,26 +33,28 @@ export default function App() {
 								source={images.logo}
 								resizeMode='contain'
 								className='absolute top-[10%] self-center'
-							
 							/>
 							<Text className='font-clashsemibold text-center text-lg color-dark absolute top-[80%]'>
-							Unlocking Brilliance Through Competition
-						</Text>
+								Unlocking Brilliance Through Competition
+							</Text>
 						</View>
-						
 					</View>
-					<CustomButton
-						title='Get Started'
-						handlePress={() => {}}
-						containerStyles='w-full mt-7'
-						textStyles='text-lg'
-					/>
-					<View style={{ flexDirection: 'row', alignItems: 'center' }}>
-						<View className='flex-1 h-px bg-dark'></View>
-						<Text className='text-lg text-dark font-clashsemibold px-2'>
+					<View className='w-full mt-7flex justify-center items-center'>
+						<Link href={'/sign-in'}>
+							<CustomButton
+								title='Get Started'
+								handlePress={() => router.push('/sign-in')}
+								containerStyles='w-[350px] mt-7'
+								textStyles='text-lg'
+							/>
+						</Link>
+					</View>
+					<View className='flex-row items-center mt-6'>
+						<View className='flex-1 h-px bg-gray-400'></View>
+						<Text className='text-lg text-gray-400 font-clashsemibold px-2'>
 							Sign in with
 						</Text>
-						<View className='flex-1 h-px bg-dark'></View>
+						<View className='flex-1 h-px bg-gray-400'></View>
 					</View>
 					<View className='w-full flex flex-row justify-evenly mt-4'>
 						<Icon name='apple' />
