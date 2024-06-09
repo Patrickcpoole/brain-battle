@@ -1,9 +1,9 @@
-import {Text, Image, View, ScrollView } from 'react-native';
+import {Text, Image, View, ScrollView, Alert } from 'react-native';
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import images from '@/constants/images';
-import { Icon } from '../../types'; 
-import { Link } from 'expo-router';
+import { Icon, SignUpFormProps } from '../../types'; 
+import { Link, router } from 'expo-router';
 
 import FormField from '@/components/FormField';
 import CustomButton from '@/components/CustomButton';
@@ -13,6 +13,7 @@ import {createUser} from '../../lib/appwrite'
 interface FormState {
 	email: string;
 	password: string;
+  username: string;
 }
 
 const SignUp = () => {
@@ -21,6 +22,7 @@ const SignUp = () => {
 		email: '',
 		password: '',
 	});
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const platformSignUpOptions: {title: string; icon: Icon}[] = [
     {
@@ -33,9 +35,26 @@ const SignUp = () => {
     }
   ];
 
-	const handleSignUp = () => {
+	const handleSignUp = async () => {
 		console.log('signing up');
-    createUser();
+    if (!form.username || !form.email || !form.password) {
+      Alert.alert('Error', 'Please fill in all the fields')
+    }
+    setIsSubmitting(true)
+
+    try {
+
+      const result = await createUser(form.email, form.password, form.username)
+
+      // set to global state using context  
+
+      router.replace('/home')
+
+    } catch(error:any) {
+      Alert.alert('Error', error.message)
+    } finally {
+      setIsSubmitting(false)
+    }
 	};
 
 
@@ -60,9 +79,10 @@ const SignUp = () => {
 						label='Username'
 						placeholder='Create Username'
 						value={form.username}
-						handleChangeText={(value) => handleInputChange('email', value)}
+						handleChangeText={(value) => handleInputChange('username', value)}
 						otherStyles='mt-7' 
 						textStyles='ml-4 mb-2'
+            keyboardType='default'
 						leftIcon={{ color: '#454D51', size: 24, name: 'user' }}
 					/>
 					<FormField

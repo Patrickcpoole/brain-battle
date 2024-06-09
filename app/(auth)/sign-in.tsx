@@ -1,12 +1,14 @@
-import {Text, Image, View, ScrollView } from 'react-native';
+import {Text, Image, View, ScrollView, Alert } from 'react-native';
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import images from '@/constants/images';
 import { Icon } from '../../types'; 
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
 
 import FormField from '@/components/FormField';
 import CustomButton from '@/components/CustomButton';
+
+import {signIn} from '../../lib/appwrite'
 
 interface FormState {
 	email: string;
@@ -18,6 +20,7 @@ const SignIn = () => {
 		email: '',
 		password: '',
 	});
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const platformSignInOptions: {title: string; icon: Icon}[] = [
     {
@@ -30,8 +33,26 @@ const SignIn = () => {
     }
   ];
 
-	const handleSignIn = () => {
+  const handleSignIn = async () => {
 		console.log('signing in');
+    if (!form.email || !form.password) {
+      Alert.alert('Error', 'Please fill in all the fields')
+    }
+    setIsSubmitting(true)
+
+    try {
+
+       await signIn(form.email, form.password)
+
+      // set to global state using context  
+
+      router.replace('/home')
+
+    } catch(error:any) {
+      Alert.alert('Error', error.message)
+    } finally {
+      setIsSubmitting(false)
+    }
 	};
 
   const handlePlatformSignIn = (option: string) => {
