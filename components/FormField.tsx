@@ -11,7 +11,6 @@ interface Icon {
 }
 
 interface CustomFormFieldProps {
-
 	label?: Label;
 	placeholder?: string;
 	handleChangeText: (text: string) => void;
