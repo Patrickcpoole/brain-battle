@@ -11,7 +11,10 @@ interface TabIconProps {
 
 const TabIcon: React.FC<TabIconProps> = ({ icon, name, focused }) => {
 	return (
-		<View className='items-center justify-center gap-2 mt-4'>
+
+		// Changing the opacity of the unfocused icons
+
+		<View className={`items-center justify-center gap-2 mt-4 ${!focused ? 'opacity-50' : ''}`}>
 			<Image source={icon} resizeMode='contain' className='w-10 h-10' />
 			<Text
 				className={`${focused ? 'font-clashsemibold' : 'font-clashregular'} text-xs`}
@@ -25,17 +28,17 @@ const TabIcon: React.FC<TabIconProps> = ({ icon, name, focused }) => {
 const TabsLayout = () => {
 	return (
 		<>
-			<Tabs
-        screenOptions={{
-          tabBarShowLabel: false,
-          tabBarStyle: {
-            height: 100,
-            borderTopWidth: 2,
-            borderTopColor: '#D8D6FF'
-          }
-        }}
-      >
-				<Tabs.Screen
+		  <Tabs
+        	screenOptions={{
+          	  tabBarShowLabel: false,
+          	  tabBarStyle: {
+            	height: 100,
+            	borderTopWidth: 2,
+            	borderTopColor: '#D8D6FF'
+          	  }
+        	}}
+      	  >
+		<Tabs.Screen
 					name='home'
 					options={{
 						title: 'home',
