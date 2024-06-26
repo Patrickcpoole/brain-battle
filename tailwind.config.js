@@ -22,7 +22,7 @@ module.exports = {
         secondary: '#FDB914',
         alert: '#FB493D',
         dark: '#454D51',
-        light: '#FFFFFF'
+        light: '#FFFFFF',
       }
     },
   },

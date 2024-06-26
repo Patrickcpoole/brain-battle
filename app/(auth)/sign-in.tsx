@@ -1,11 +1,14 @@
-import { StyleSheet, Text, Image, View, ScrollView } from 'react-native';
+import {Text, Image, View, ScrollView, Alert } from 'react-native';
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import images from '@/constants/images';
 import { Icon } from '../../types'; 
+import { Link, router } from 'expo-router';
 
 import FormField from '@/components/FormField';
 import CustomButton from '@/components/CustomButton';
+
+import {signIn} from '../../lib/appwrite'
 
 interface FormState {
 	email: string;
@@ -17,6 +20,7 @@ const SignIn = () => {
 		email: '',
 		password: '',
 	});
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const platformSignInOptions: {title: string; icon: Icon}[] = [
     {
@@ -29,8 +33,26 @@ const SignIn = () => {
     }
   ];
 
-	const handleSignIn = () => {
+  const handleSignIn = async () => {
 		console.log('signing in');
+    if (!form.email || !form.password) {
+      Alert.alert('Error', 'Please fill in all the fields')
+    }
+    setIsSubmitting(true)
+
+    try {
+
+       await signIn(form.email, form.password)
+
+      // set to global state using context  
+
+      router.replace('/home')
+
+    } catch(error:any) {
+      Alert.alert('Error', error.message)
+    } finally {
+      setIsSubmitting(false)
+    }
 	};
 
   const handlePlatformSignIn = (option: string) => {
@@ -72,17 +94,27 @@ const SignIn = () => {
 						leftIcon={{ color: '#454D51', size: 24, name: 'lock' }}
 						rightIcon={{ color: '#454D51', size: 24, name: 'eye' }}
 					/>
-					<View className='w-full flex flex-row justify-end'>
+          <View className='flex flex-column  justify-between items-center '>
+
+         
+          	<View className='flex justify-end'>
+						<Text className='text-primary text-lg font-clashsemibold mt-2 mr-5'>
+            <Link  href='/sign-up'>Don't have an account? Sign Up</Link>
+						</Text>
+					</View>
+          <CustomButton
+						title='Sign In'
+						handlePress={handleSignIn}
+						containerStyles='mt-6 rounded-[50%] w-3/4'
+						textStyles='text-xl font-clashsemibold text-light'
+					/>
+					<View className='flex flex-row justify-end  '>
 						<Text className='text-primary text-lg font-clashsemibold mt-2'>
 							Forgot Password?
 						</Text>
 					</View>
-					<CustomButton
-						title='Sign In'
-						handlePress={handleSignIn}
-						containerStyles='mt-6 rounded-[50%]'
-						textStyles='text-xl font-clashsemibold text-light'
-					/>
+          </View>
+				
           <View className='flex-row items-center mt-6'>
 						<View className='flex-1 h-px bg-gray-400'></View>
 						<Text className='text-lg text-gray-400 font-clashsemibold px-2'>
@@ -109,4 +141,3 @@ const SignIn = () => {
 
 export default SignIn;
 
-const styles = StyleSheet.create({});

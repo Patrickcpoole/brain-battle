@@ -11,7 +11,6 @@ interface Icon {
 }
 
 interface CustomFormFieldProps {
-
 	label?: Label;
 	placeholder?: string;
 	handleChangeText: (text: string) => void;
@@ -61,6 +60,7 @@ const FormField = ({
 					placeholderTextColor='#7b7b8b'
 					onChangeText={handleChangeText}
 					secureTextEntry={label === 'Password' && !showPassword}
+					autoCapitalize='none'  
 				/>
 				{rightIcon && (
 					<FontAwesome

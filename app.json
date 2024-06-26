@@ -1,19 +1,20 @@
 {
   "expo": {
-    "name": "brain-battle",
+    "name": "Brain Battle",
     "slug": "brain-battle",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/app-icon.png",
     "scheme": "brainbattle",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/splash-screen.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "package": "https://cloud.appwrite.io"
     },
     "android": {
       "adaptiveIcon": {
@@ -31,6 +32,7 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "entryPoint": "./app-demo/index.tsx"
   }
 }
