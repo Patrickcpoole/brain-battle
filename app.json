@@ -32,7 +32,6 @@
     ],
     "experiments": {
       "typedRoutes": true
-    },
-    "entryPoint": "./app-demo/index.tsx"
+    }
   }
 }
