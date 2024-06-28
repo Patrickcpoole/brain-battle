@@ -1,0 +1,10 @@
+{
+  "name": "test-function",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/join-lobby.ts",
+  "type": "module",
+  "dependencies": {
+    "node-appwrite": "^13.0.0"
+  }
+}
