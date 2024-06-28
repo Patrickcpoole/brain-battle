@@ -1,0 +1,252 @@
+{
+  "matchedAddress": {
+      "formattedAddress": "4750 WALNUT ST, BOULDER, CO  80301-2532",
+      "mainAddressLine": "4750 WALNUT ST",
+      "addressLastLine": "BOULDER, CO  80301-2532",
+      "areaName1": "CO",
+      "areaName2": "BOULDER COUNTY",
+      "areaName3": "BOULDER",
+      "postCode": "80301",
+      "postCodeExt": "2532",
+      "country": "USA",
+      "addressNumber": "4750",
+      "streetName": "WALNUT",
+      "unitType": "",
+      "unitValue": ""
+  },
+  "school": [
+      {
+          "id": "15043906",
+          "name": "EISENHOWER ELEMENTARY SCHOOL",
+          "assigned": "true",
+          "phone": "7205616700",
+          "addressType": "Physical",
+          "address": {
+              "mainAddressLine": "1220 EISENHOWER DR",
+              "areaName1": "CO",
+              "areaName3": "BOULDER",
+              "postCode": "80303"
+          },
+          "lowestGrade": "KG",
+          "highestGrade": "05",
+          "schoolType": "PUB",
+          "schoolTypeDesc": "Public",
+          "schoolSubType": "R",
+          "schoolSubTypeDesc": "Regular",
+          "educationLevel": "P",
+          "educationLevelDesc": "Primary",
+          "ncesSchoolId": "080249000112",
+          "ncesDistrictId": "0802490",
+          "ncesDataYear": "2017",
+          "schoolRanking": [
+              {
+                  "current": "true",
+                  "rankYear": "2018",
+                  "stateRank": "24",
+                  "numberOfSchools": "917",
+                  "avgMathScore": "68.2",
+                  "avgReadingScore": "80.3",
+                  "statePercentileScore": "97.4"
+              },
+              {
+                  "current": "false",
+                  "rankYear": "2017",
+                  "stateRank": "28",
+                  "numberOfSchools": "929",
+                  "avgMathScore": "64.9",
+                  "avgReadingScore": "79.0",
+                  "statePercentileScore": "97.0"
+              },
+              {
+                  "current": "false",
+                  "rankYear": "2016",
+                  "stateRank": "63",
+                  "numberOfSchools": "914",
+                  "avgMathScore": "63.9",
+                  "avgReadingScore": "71.0",
+                  "statePercentileScore": "93.1"
+              }
+          ],
+          "students": "405",
+          "teachers": "23.94",
+          "studentTeacherRatio": "17.60",
+          "choice": "false",
+          "coextensiv": "false",
+          "schoolDistricts": {
+              "ncesDistrictId": "0802490",
+              "name": "BOULDER VALLEY SCHOOL DISTRICT NO. RE2",
+              "totalSchools": "57",
+              "districtType": "Unified",
+              "areaInSqM": "1249784793.63",
+              "supervisoryUnionId": "000",
+              "districtEnrollment": "30908",
+              "districtUrl": "HTTP://BVSD.ORG/PAGES/DEFAULT.ASPX"
+          },
+          "schoolProfile": {
+              "blueRibbon": "false",
+              "internationalBaccalaureate": "false",
+              "titleI": "false",
+              "expensePerStudent": "5743",
+              "studentBelowPovertyPct": "16.30",
+              "advancePlacementClasses": "false",
+              "freeOrReducedPriceLunches": {
+                  "freeLunchesCount": "62",
+                  "reducedPriceLunchedCount": "62",
+                  "totalCount": "62"
+              },
+              "studentEthnicity": {
+                  "indianAlaskaNative": "1",
+                  "asian": "26",
+                  "hispanic": "49",
+                  "black": "4",
+                  "white": "307",
+                  "hawaiianPacificlslander": "1",
+                  "twoOrMoreRaces": "32"
+              }
+          },
+          "gradeLevelsTaught": {
+              "pk": "false",
+              "kg": "true",
+              "first": "true",
+              "second": "true",
+              "third": "true",
+              "fourth": "true",
+              "fifth": "true",
+              "sixth": "false",
+              "seventh": "false",
+              "eighth": "false",
+              "ninth": "false",
+              "tenth": "false",
+              "eleventh": "false",
+              "twelfth": "false"
+          },
+          "distance": {
+              "unit": "meters",
+              "value": "1260.94387969"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -105.233863,
+                  40.008136
+              ]
+          }
+      },
+      {
+          "id": "15043938",
+          "name": "BOULDER COMMUNITY SCHOOL-INTEGRATED STUDIES",
+          "phone": "7205616500",
+          "addressType": "Physical",
+          "address": {
+              "mainAddressLine": "3995 AURORA AVE",
+              "areaName1": "CO",
+              "areaName3": "BOULDER",
+              "postCode": "80303"
+          },
+          "lowestGrade": "PK",
+          "highestGrade": "05",
+          "schoolType": "PUB",
+          "schoolTypeDesc": "Public",
+          "schoolSubType": "R",
+          "schoolSubTypeDesc": "Regular",
+          "educationLevel": "P",
+          "educationLevelDesc": "Primary",
+          "ncesSchoolId": "080249001630",
+          "ncesDistrictId": "0802490",
+          "ncesDataYear": "2017",
+          "schoolRanking": [
+              {
+                  "current": "true",
+                  "rankYear": "2018",
+                  "stateRank": "73",
+                  "numberOfSchools": "917",
+                  "avgMathScore": "62.2",
+                  "avgReadingScore": "73.0",
+                  "statePercentileScore": "92.0"
+              },
+              {
+                  "current": "false",
+                  "rankYear": "2017",
+                  "stateRank": "30",
+                  "numberOfSchools": "929",
+                  "avgMathScore": "67.3",
+                  "avgReadingScore": "78.6",
+                  "statePercentileScore": "96.8"
+              },
+              {
+                  "current": "false",
+                  "rankYear": "2016",
+                  "stateRank": "36",
+                  "numberOfSchools": "914",
+                  "avgMathScore": "64.0",
+                  "avgReadingScore": "78.9",
+                  "statePercentileScore": "96.1"
+              }
+          ],
+          "students": "308",
+          "teachers": "16.11",
+          "studentTeacherRatio": "18.90",
+          "choice": "false",
+          "coextensiv": "false",
+          "schoolDistricts": {
+              "ncesDistrictId": "0802490",
+              "name": "BOULDER VALLEY SCHOOL DISTRICT NO. RE2",
+              "totalSchools": "57",
+              "districtType": "Unified",
+              "areaInSqM": "1249784793.63",
+              "supervisoryUnionId": "000",
+              "districtEnrollment": "30908",
+              "districtUrl": "HTTP://BVSD.ORG/PAGES/DEFAULT.ASPX"
+          },
+          "schoolProfile": {
+              "blueRibbon": "false",
+              "internationalBaccalaureate": "false",
+              "titleI": "false",
+              "expensePerStudent": "5743",
+              "studentBelowPovertyPct": "17.21",
+              "advancePlacementClasses": "false",
+              "freeOrReducedPriceLunches": {
+                  "freeLunchesCount": "39",
+                  "reducedPriceLunchedCount": "39",
+                  "totalCount": "39"
+              },
+              "studentEthnicity": {
+                  "indianAlaskaNative": "1",
+                  "asian": "4",
+                  "hispanic": "33",
+                  "black": "3",
+                  "white": "250",
+                  "hawaiianPacificlslander": "2",
+                  "twoOrMoreRaces": "16"
+              }
+          },
+          "gradeLevelsTaught": {
+              "pk": "true",
+              "kg": "true",
+              "first": "true",
+              "second": "true",
+              "third": "true",
+              "fourth": "true",
+              "fifth": "true",
+              "sixth": "false",
+              "seventh": "false",
+              "eighth": "false",
+              "ninth": "false",
+              "tenth": "false",
+              "eleventh": "false",
+              "twelfth": "false"
+          },
+          "distance": {
+              "unit": "meters",
+              "value": "1572.3084812"
+          },
+          "geometry": {
+              "type": "Point",
+              "coordinates": [
+                  -105.2436,
+                  40.004224
+              ]
+          }
+      }
+  ]
+}
