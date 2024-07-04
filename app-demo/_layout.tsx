@@ -1,13 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { Slot, SplashScreen, Stack } from 'expo-router';
+import { SplashScreen, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 import React, { useEffect } from 'react';
-
-import { GlobalProvider } from '@/context/GlobalProvider';
 
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
+    
 	const [fontsLoaded, error] = useFonts({
 
 		// Loading the Clash Display font files
@@ -32,36 +30,20 @@ const RootLayout = () => {
 
 	useEffect(() => {
 		if (error) throw error;
-
 		if (fontsLoaded) SplashScreen.hideAsync();
 	}, [fontsLoaded, error]);
 
-  if (!fontsLoaded && !error) return null;
+	if (!fontsLoaded && !error) return null;
+	
 	return (
-		<GlobalProvider>
-			<Stack>
-				{/* Stack screen for the entry point */}
-				<Stack.Screen name='index' options={{headerShown: false}} />
-				{/* Stack screen for the authorization flow */}
-				<Stack.Screen name='(auth)' options={{headerShown: false}} />
-				{/* Stack screen for the main window */}
-				<Stack.Screen name='(tabs)' options={{headerShown: false}} />
-				{/* Stack screen for the profile options */}
-				<Stack.Screen name='(profile)' options={{headerShown: false}} />
-				{/* Stack screen for the game options */}
-				<Stack.Screen name='(game)' options={{headerShown: false}} />
-			</Stack>
-		</GlobalProvider>
+		<Stack>
+			{/* Stack screen for the entry point */}
+			<Stack.Screen name='index' options={{headerShown: false}} />
+			{/* Stack screen for the demo flow */}
+			{/* <Stack.Screen name='(demo)' options={{headerShown: false}} /> */}
+		</Stack>
 	);
+
 };
 
 export default RootLayout;
-
-const styles = StyleSheet.create({
-	container: {
-		display: 'flex',
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});
