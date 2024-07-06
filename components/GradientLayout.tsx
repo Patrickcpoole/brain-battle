@@ -8,16 +8,16 @@ import {
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 // import { images } from "../../src/assets";
-import images from "../../constants/images";
-import icons from "../../constants/icons";
-import tests from "../../constants/tests";
-import { windowHeight, windowWidth } from "../../utils/Dimensions";
+import images from "@/constants/images";
+import icons from "@/constants/icons";
+import tests from "@/constants/tests";
+import { windowHeight, windowWidth } from "@/utils/Dimensions";
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters'
-import { appStyles } from "../../utils/appStyles";
+import { appStyles } from "@/utils/appStyles";
 import CustomText from "./CustomText";
-import { fonts } from "../../utils/fonts";
+import { fonts } from "@/utils/fonts";
 import { deviceType, DeviceType } from "expo-device";
-import { colors } from "../../utils/colors";
+import { colors } from "@/utils/colors";
 
 const GradientLayout = ({ children, color }: any) => {
   const isTablet = (deviceType == DeviceType.TABLET);

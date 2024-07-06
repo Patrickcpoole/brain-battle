@@ -5,13 +5,13 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { appStyles } from "../../utils/appStyles";
+import { appStyles } from "@/utils/appStyles";
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters'
 // import { images } from "../../src/assets";
-import tests from "../../constants/tests";
-import CustomText from "./CustomText";
-import { fonts } from "../../utils/fonts";
-import { colors } from "../../utils/colors";
+import tests from "@/constants/tests";
+import CustomText from "../CustomText";
+import { fonts } from "@/utils/fonts";
+import { colors } from "@/utils/colors";
 import { deviceType, DeviceType } from "expo-device";
 
 const RequestChallengeContainer = ({ navigation, item }: any) => {

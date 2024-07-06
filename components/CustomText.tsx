@@ -1,6 +1,6 @@
 import { Text } from 'react-native'
-import { colors } from '../../utils/colors'
-import { fonts } from '../../utils/fonts'
+import { colors } from '@/utils/colors'
+import { fonts } from '@/utils/fonts'
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters'
 
 type Props = {

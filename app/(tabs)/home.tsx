@@ -4,11 +4,11 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ScrollView } from 'react-native'
 import { router } from 'expo-router'
-import PlayerAvatar from '../../components/PlayerAvatar'
-import FriendsGameCard from '../../components/FriendsGameCard'
-import LastGameCard from '../../components/LastGameCard'
-import icons from '../../constants/icons'
-import tests from '../../constants/tests'
+import PlayerAvatar from '@/components/PlayerAvatar'
+import FriendsGameCard from '@/components/FriendsGameCard'
+import LastGameCard from '@/components/LastGameCard'
+import icons from '@/constants/icons'
+import tests from '@/constants/tests'
 
 // Picture links for testing
 
