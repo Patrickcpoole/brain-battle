@@ -7,10 +7,6 @@ import rewards from '../assets/icons/rewards-icon.png'
 import google from '../assets/icons/google-icon.png'
 import facebook from '../assets/icons/facebook-icon.png'
 import apple from '../assets/icons/apple-icon.png'
-import search from '../assets/icons/search-icon.png'
-import verified from '../assets/icons/verified-icon.png'
-import add from '../assets/icons/add-icon.png'
-import notifications from '../assets/icons/notifications-icon.png'
 
 export default {
   logo,
@@ -21,9 +17,5 @@ export default {
   rewards,
   google,
   facebook,
-  apple,
-  search,
-  verified,
-  add,
-  notifications
+  apple
 }
