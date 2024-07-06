@@ -1,5 +1,5 @@
 import { Client, Databases, ID } from 'node-appwrite';
-import { project, database, key } from '../../app-details';
+import { project, database, key } from '../lib/app-details';
 
 export default async () => {
 

@@ -40,7 +40,7 @@ const response4 = {matches: [
 
 const Home = () => {
     return (
-        <SafeAreaView className="bg-light" edges={["top", "left", "right"]} style={{flex: 1}}>
+        <SafeAreaView className="bg-light" edges={["top", "left", "right"]}>
             <View className="w-full flex flex-row justify-between items-center border-b-2 border-[#D8D6FF]" style={styles.header}>
                 <View className="flex flex-row items-center">
                     <Image source={icons.logo} style={styles.logo} />

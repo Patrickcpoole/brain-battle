@@ -7,27 +7,15 @@ import { Client, Functions } from 'react-native-appwrite';
 import { project, database, key } from '../lib/app-details';
 // import { Functions } from 'node-appwrite';
 
-async function testFunction() {
+const App = () => {
 
     const client = new Client();
     client.setEndpoint(project.endpoint);
     client.setProject(project.id);
+    //client.setKey(key);
     client.setPlatform(project.platform);
 
     const functions = new Functions(client);
-
-    try {
-        const result = await functions.createExecution("6680572f0035bcbaec9d");
-        console.log(result);
-    } catch (error) {
-        console.log(error);
-    }
-
-}
-
-const App = () => {
-
-    testFunction();
 
     // const result = await functions.createExecution();
 
