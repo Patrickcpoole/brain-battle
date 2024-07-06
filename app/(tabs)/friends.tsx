@@ -20,19 +20,19 @@ import {
 } from "react-native";
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters'
 import { ScrollView } from 'react-native'
-import GradientLayout from "../../components/waqas-components/GradientLayout";
+import GradientLayout from "@/components/GradientLayout";
 import { appStyles } from "../../utils/appStyles";
 import { colors } from "../../utils/colors";
-import CustomText from "../../components/waqas-components/CustomText";
+import CustomText from "@/components/CustomText";
 import { fonts } from "../../utils/fonts";
 // import DeviceInfo from "react-native-device-info";
 import { deviceType, DeviceType } from "expo-device";
 import { useState } from "react";
-import FrinedContainer from "../../components/waqas-components/FrinedContainer";
-import GroupPartiesContainer from "../../components/waqas-components/GroupPartiesContainer";
-import RequestChallengeContainer from "../../components/waqas-components/RequestChallengeContainer";
-import CustomSearch from "../../components/waqas-components/CustomSearch";
-import FindFriendsContainer from "../../components/waqas-components/FindFriendsContainer";
+import FriendContainer from "@/components/Friends/FriendContainer";
+import GroupPartiesContainer from "@/components/Friends/GroupPartiesContainer";
+import RequestChallengeContainer from "@/components/Friends/RequestChallengeContainer";
+import CustomSearch from "../../components/CustomSearch";
+import FindFriendsContainer from "../../components/Friends/FindFriendsContainer";
 import { FindFriends, groupParties, onlineFriends } from "../../utils/Data";
 
 const Friends = ({ navigation }: any) => {
@@ -143,7 +143,7 @@ const Friends = ({ navigation }: any) => {
                 color={colors.gray}
               />
               {onlineFriends.map((item: any, index: any) => {
-                return <FrinedContainer key={index} item={item} />;
+                return <FriendContainer key={index} item={item} />;
               })}
 
               <CustomText
