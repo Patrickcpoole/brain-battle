@@ -1,6 +1,5 @@
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters'
-import CustomText from "./CustomText";
 import { colors } from "@/utils/colors";
 import { windowWidth } from "@/utils/Dimensions";
 import { fonts } from "@/utils/fonts";

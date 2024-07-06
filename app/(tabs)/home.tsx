@@ -56,7 +56,7 @@ const Home = () => {
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View className="w-full flex flex-row justify-between items-center" style={styles.carousel}>
                         {response2.links.map((link) => (
-                            <FriendsGameCard picture={link} style={styles.carouselCard} />
+                            <FriendsGameCard picture={link} key={link} style={styles.carouselCard} />
                         ))}
                     </View>
                 </ScrollView>
