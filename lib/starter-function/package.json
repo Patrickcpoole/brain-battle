@@ -5,7 +5,7 @@
   "main": "src/main.js",
   "type": "module",
   "scripts": {
-    "build": "tsc src/main.js",
+    "build": "tsc src/main.ts",
     "format": "prettier --write ."
   },
   "dependencies": {
