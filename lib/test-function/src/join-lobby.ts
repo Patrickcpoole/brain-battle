@@ -1,8 +1,12 @@
-import { Client, Databases, ID } from 'node-appwrite';
+// import { Client, Databases, ID } from 'node-appwrite';
 import { project, database, key } from '../../app-details';
 
 export default async () => {
 
+    console.log(key);
+
+    /*
+    
     const client = new Client();
     client.setEndpoint(project.endpoint);
     client.setProject(project.id);
@@ -11,5 +15,7 @@ export default async () => {
     const databases = new Databases(client);
 
     const result = await databases.createCollection(database.id, ID.unique(), "Test Collection");
+
+    */
     
 };
