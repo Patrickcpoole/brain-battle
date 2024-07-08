@@ -4,7 +4,13 @@
   "description": "",
   "main": "src/join-lobby.ts",
   "type": "module",
+  "scripts": {
+    "build": "tsc src/join-lobby.js",
+  },
   "dependencies": {
     "node-appwrite": "^13.0.0"
+  }
+  "devDependencies": {
+    "prettier": "^3.2.5",
   }
 }
