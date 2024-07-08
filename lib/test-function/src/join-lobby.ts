@@ -1,9 +1,9 @@
 // import { Client, Databases, ID } from 'node-appwrite';
-import { project, database, key } from '@/lib/app-details';
+// import { project, database, key } from '@/lib/app-details';
 
 export default async () => {
 
-    console.log(key);
+    console.log("123");
 
     /*
     
