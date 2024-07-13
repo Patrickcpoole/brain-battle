@@ -21,8 +21,7 @@ export default {
   rewards,
   google,
   facebook,
-  apple,
-  notifications
+  notifications,
   apple,
   faceOff
 }

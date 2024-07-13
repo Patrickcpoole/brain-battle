@@ -2,6 +2,7 @@ import { Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters'
 import React from 'react'
 import { router } from 'expo-router'
+import images from '../constants/images'
 import tests from '../constants/tests'
 
 interface PlayerAvatarProps {
@@ -15,7 +16,7 @@ const PlayerAvatar = ({picture, elo}: PlayerAvatarProps) => {
 
     return (
         <TouchableOpacity onPress={() => router.push("/profile")} className="flex flex-row items-center bg-light border-2 border-black rounded-full shadow-sm shadow-gray-500" style={styles.bevel}>
-            <Image source={{uri: picture}} className="rounded-full" style={styles.picture} />
+            <Image source={images.user1}  className="rounded-full" style={styles.picture} />
             <Text className="font-poppinssemibold" style={styles.rating}> {elo} </Text>
         </TouchableOpacity>
     )

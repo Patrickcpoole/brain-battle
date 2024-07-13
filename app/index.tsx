@@ -49,7 +49,7 @@ const App = () => {
                     <Picker.Item label="Demo User 1" value={"demouser1@gmail.com"} style={{fontSize: moderateScale(14)}} />
                     <Picker.Item label="Demo User 2" value={"demouser2@gmail.com"} style={{fontSize: moderateScale(14)}} />
                 </Picker>
-                <TouchableOpacity onPress={login} className="flex self-center bg-primary rounded-full" style={{width: scale(300), paddingVertical: verticalScale(12), marginBottom: verticalScale(30)}}>
+                <TouchableOpacity onPress={() => login} className="flex self-center bg-primary rounded-full" style={{width: scale(300), paddingVertical: verticalScale(12), marginBottom: verticalScale(30)}}>
                     <Text className="font-clashsemibold text-center text-white" style={{fontSize: moderateScale(18)}}> Select User </Text>
                 </TouchableOpacity>
             </View>
