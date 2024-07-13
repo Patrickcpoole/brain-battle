@@ -1,17 +1,13 @@
-import { View, Text, Image, TouchableOpacity, Alert, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Alert } from 'react-native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Picker } from '@react-native-picker/picker';
-// import CustomButton from '@/components/CustomButton';
 import images from '@/constants/images';
 
-import { Client, Account, Databases, ID } from 'react-native-appwrite';
-// import { Client, Databases, ID } from 'node-appwrite';
-// import { Client, Functions } from 'react-native-appwrite';
-import { project, database, key } from '../lib/app-details';
-// import { Functions } from 'node-appwrite';
+import { Client, Account } from 'react-native-appwrite';
+import { project } from '../lib/app-details';
 
 const App = () => {
 
@@ -29,28 +25,7 @@ const App = () => {
         })
         .catch((exception) => (console.error(exception)));
 
-    // const databases = new Databases(client);
-
-    // const result = databases.createDocument(database.id, "668c613f003b11e3b3af", ID.unique(), {message: "Hello World"});
-    // result.then((response) => {
-    //     console.log(response);
-    //     console.log("Hello World :)");
-    // });
-
-    // const result = functions.createExecution("6680572f0035bcbaec9d").then((res) => (console.log(res)));
-
-    // console.log(result);
-
-    // const result = await functions.createExecution();
-
-    // client.subscribe("test-channel", (response) => {
-    //     console.log("Hello World!");
-
-    // });
-
     const [player, setPlayer] = useState("demouser1@gmail.com");
-
-    //useEffect(() => (console.log(player)), [player]);
 
     function login() {
         
@@ -64,21 +39,10 @@ const App = () => {
             })
             .catch((exception) => (Alert.alert("Warning!")));
 
-        // try {
-        //     const result = await account.createSession(player, "1234567890").then();
-        //     console.log(result);
-        // } catch (exception) {
-        //     console.error(exception)
-        //     throw new Error("Login process failed!");
-        // }
-
-        // console.log(result);
-
     }
 
     return (
         <SafeAreaView className="bg-light">
-            {/* <Text className="font-clashregular"> Brain Battle Demo </Text> */}
             <View className="w-full h-full flex justify-center" style={{gap: verticalScale(30)}}>
                 <Image source={images.demoLogo} className="flex self-center" resizeMode="contain" style={{width: scale(300), height: verticalScale(100)}} />
                 <Picker selectedValue={player} onValueChange={(email) => (setPlayer(email))}>
@@ -95,10 +59,3 @@ const App = () => {
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-
-
-    
-});
-
