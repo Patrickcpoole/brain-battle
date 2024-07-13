@@ -7,6 +7,7 @@ import rewards from '../assets/icons/rewards-icon.png'
 import google from '../assets/icons/google-icon.png'
 import facebook from '../assets/icons/facebook-icon.png'
 import apple from '../assets/icons/apple-icon.png'
+import faceOff from '../assets/icons/face-off-icon.png'
 
 export default {
   logo,
@@ -17,5 +18,6 @@ export default {
   rewards,
   google,
   facebook,
-  apple
+  apple,
+  faceOff
 }

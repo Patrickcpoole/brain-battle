@@ -40,7 +40,7 @@ const RootLayout = () => {
 			{/* Stack screen for the entry point */}
 			<Stack.Screen name='index' options={{headerShown: false}} />
 			{/* Stack screen for the demo flow */}
-			{/* <Stack.Screen name='(demo)' options={{headerShown: false}} /> */}
+			<Stack.Screen name='(demo)' options={{headerShown: false}} />
 		</Stack>
 	);
 
