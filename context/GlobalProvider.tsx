@@ -39,6 +39,7 @@ export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
 
   useEffect(() => {
     const fetchUser = async () => {
+      console.log('fetching user')
       try {
         const res:any = await getCurrentUser();
         if (res) {

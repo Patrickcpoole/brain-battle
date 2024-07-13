@@ -1,5 +1,5 @@
 import { Client, Account, Avatars, Databases, ID, Query } from 'react-native-appwrite';
-
+import { router } from 'expo-router';
 export const config = {
 	endpoint: 'https://cloud.appwrite.io/v1',
 	platform: 'com.brainbattle.app',
@@ -19,6 +19,41 @@ client
 const account = new Account(client);
 const avatars = new Avatars(client);
 const databases = new Databases(client);
+
+
+
+export const demoLogin = async (playerEmail: string) => {
+	console.log('Logged in with ' + playerEmail);
+	const account = new Account(client);
+
+	const result = await account
+		.createEmailPasswordSession(playerEmail, '1234567890')
+		.then((response) => {
+			console.log(`This is the login response ${response}`);
+			router.replace('/(demo)/ready')
+			
+		})
+		.catch((error) => {
+			console.error(`This is the login error ${error}`)
+		});
+
+		return result
+};
+
+export const checkForCurrentSession = async () => {
+	const result = await account.listSessions();
+	console.log('result in check for current sessions', result)
+	return result.sessions
+}
+
+export const removeCurrentSessions = async () => {
+	const result = await account.deleteSessions();
+	return result
+}
+
+
+
+
 
 // Register User
 export const createUser = async (

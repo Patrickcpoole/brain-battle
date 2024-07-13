@@ -7,6 +7,8 @@ import rewards from '../assets/icons/rewards-icon.png'
 import google from '../assets/icons/google-icon.png'
 import facebook from '../assets/icons/facebook-icon.png'
 import apple from '../assets/icons/apple-icon.png'
+import search from '../assets/icons/apple-icon.png'
+import notifications from '../assets/icons/notification.png'
 import faceOff from '../assets/icons/face-off-icon.png'
 
 export default {
@@ -15,9 +17,11 @@ export default {
   create,
   friends,
   play,
+  search,
   rewards,
   google,
   facebook,
+  notifications,
   apple,
   faceOff
 }
