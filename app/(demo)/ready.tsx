@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { osName, deviceType, DeviceType } from 'expo-device';
 import OvalContainer from '@/components/OvalContainer';
-import PlayerAvatar from '@/components/PlayerAvatar';
 import icons from '@/constants/icons';
 
 const Ready = () => {
@@ -26,10 +25,6 @@ const Ready = () => {
                     </View>
                     <Text className="font-clashmedium" style={{fontSize: moderateScale(14), color: "#707070"}}> SAT - Writing and Language </Text>
                     <OvalContainer text={"Click the buzzer and answer before your opponent, Jeopardy style! Be quick!"} style={{paddingVertical: verticalScale(8)}} />
-                </View>
-                <View>
-                <PlayerAvatar picture="user1" elo={1235} />
-                <PlayerAvatar picture="user2" elo={1235} />
                 </View>
                 <Image source={icons.faceOff} resizeMode="contain" style={{width: scale(200), height: verticalScale(200)}}/>
                 <View className={`w-full flex justify-center items-center bg-gray-100 rounded-t-3xl ${isApple ? "shadow-md" : "shadow-lg"} shadow-gray-500`} style={{height: verticalScale(90)}}>

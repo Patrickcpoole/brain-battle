@@ -1,17 +1,13 @@
-import { View, Text, Image, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Picker } from '@react-native-picker/picker';
 import images from '@/constants/images';
-import {
-	demoLogin,
-	checkForCurrentSession,
-	removeCurrentSessions,
-} from '@/lib/appwrite';
-import { project } from '../lib/app-details';
+import { demoLogin, checkForCurrentSession, removeCurrentSessions } from '@/lib/appwrite';
 
 const App = () => {
+    
 	const [player, setPlayer] = useState('demouser1@gmail.com');
 
 	useEffect(() => {
@@ -66,8 +62,7 @@ const App = () => {
 						className='font-clashsemibold text-center text-white'
 						style={{ fontSize: moderateScale(18) }}
 					>
-						{' '}
-						Select User{' '}
+						Select User
 					</Text>
 				</TouchableOpacity>
 			</View>
