@@ -16,6 +16,7 @@ const App = () => {
 
 	useEffect(() => {
 		const checkForAndRemoveSessions = async () => {
+            console.log('checking')
 			const currentSessions = await checkForCurrentSession();
 			console.log('current sessions', currentSessions);
 			if (currentSessions.length > 0) {
