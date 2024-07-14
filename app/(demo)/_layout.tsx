@@ -5,6 +5,7 @@ const DemoLayout = () => {
     return (
         <Stack>
             <Stack.Screen name="ready" options={{headerShown: false}} />
+            <Stack.Screen name="play" options={{headerShown: false}} />
         </Stack>
     );
 

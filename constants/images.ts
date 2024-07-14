@@ -19,12 +19,14 @@ import user14 from '../assets/images/user14.png'
 import roosevelt from '../assets/images/roosevelt.png'
 import monsterBadge from '../assets/images/monsterBadge.png'
 import sashBadge from '../assets/images/sashBadge.png'
+import buzzerButton from '../assets/images/buzzer-button.png'
 
 
 import demoLogo from '../assets/images/demo-logo.png'
 
 export default {
   logo,
+  buzzerButton,
   logoSmall,
   circle,
   user1,
