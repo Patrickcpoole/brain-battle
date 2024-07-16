@@ -14,6 +14,7 @@ import FaceOffHeader from '@/components/FaceOffHeader';
 import OvalContainer from '@/components/OvalContainer';
 import PlayerAvatar from '@/components/PlayerAvatar';
 import icons from '@/constants/icons';
+import { findRoom } from '@/lib/appwrite-demo';
 
 const Ready = () => {
     
@@ -27,9 +28,14 @@ const Ready = () => {
         setTimeout(() => {
             console.log('searching')
 
-			
-			
             // Implement actual searching logic here
+
+			const result = findRoom()
+				.then((response) => {
+					console.log(response);
+				})
+				.catch((exception) => (console.error(exception)));
+			
             router.replace('/(demo)/play')
         }, 2000);
     }
@@ -76,7 +82,7 @@ const Ready = () => {
 							style={{ fontSize: moderateScale(24) }}
 						>
 							{' '}
-							Play{' '}
+							{searching ? '...' : 'Play'}{' '}
 						</Text>
 					</TouchableOpacity>
 				</View>
