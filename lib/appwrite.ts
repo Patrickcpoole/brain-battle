@@ -1,4 +1,11 @@
-import { Client, Account, Avatars, Databases, ID, Query } from 'react-native-appwrite';
+import {
+	Client,
+	Account,
+	Avatars,
+	Databases,
+	ID,
+	Query,
+} from 'react-native-appwrite';
 import { router } from 'expo-router';
 export const config = {
 	endpoint: 'https://cloud.appwrite.io/v1',
@@ -20,7 +27,16 @@ const account = new Account(client);
 const avatars = new Avatars(client);
 const databases = new Databases(client);
 
-
+export const getUserId = async () => {
+	try {
+			const result = await account.get();
+			console.log('get account result', result.targets[0].userId);  // Use $id instead of userId
+			return result.targets[0].userId
+	} catch (error) {
+			console.error('Error fetching account details:', error);
+			return null;  // Return null or appropriate error handling
+	}
+};
 
 export const demoLogin = async (playerEmail: string) => {
 	console.log('Logged in with ' + playerEmail);
@@ -30,30 +46,25 @@ export const demoLogin = async (playerEmail: string) => {
 		.createEmailPasswordSession(playerEmail, '1234567890')
 		.then((response) => {
 			console.log(`This is the login response ${response}`);
-			router.replace('/(demo)/ready')
-			
+			router.replace('/(demo)/ready');
 		})
 		.catch((error) => {
-			console.error(`This is the login error ${error}`)
+			console.error(`This is the login error ${error}`);
 		});
 
-		return result
+	return result;
 };
 
 export const checkForCurrentSession = async () => {
 	const result = await account.listSessions();
-	console.log('result in check for current sessions', result)
-	return result.sessions
-}
+	console.log('result in check for current sessions', result);
+	return result.sessions;
+};
 
 export const removeCurrentSessions = async () => {
 	const result = await account.deleteSessions();
-	return result
-}
-
-
-
-
+	return result;
+};
 
 // Register User
 export const createUser = async (
@@ -99,56 +110,56 @@ export const signIn = async (email: string, password: string) => {
 
 		return session;
 	} catch (error) {
-    console.error(error)
-  }
-}
+		console.error(error);
+	}
+};
 
 interface UserData {
-  accountId: string;
-  email: string;
-  username: string;
-  avatar: string;
+	accountId: string;
+	email: string;
+	username: string;
+	avatar: string;
 }
 
 interface Document {
-  account_id: string;  // Example structure, adjust according to actual data
-  mail: string;
-  user_name: string;
-  profile_picture: string;
+	account_id: string; // Example structure, adjust according to actual data
+	mail: string;
+	user_name: string;
+	profile_picture: string;
 }
 
 export const getCurrentUser = async (): Promise<UserData | undefined> => {
-  try {
-    const currentAccount = await account.get();
+	try {
+		const currentAccount = await account.get();
 
-    if (!currentAccount) {
-      throw new Error("No account found");
-    }
+		if (!currentAccount) {
+			throw new Error('No account found');
+		}
 
-    const currentUser = await databases.listDocuments(
-      config.databaseId, 
-      config.userCollectionId, 
-      [Query.equal('accountId', currentAccount.$id)]
-    );
+		const currentUser = await databases.listDocuments(
+			config.databaseId,
+			config.userCollectionId,
+			[Query.equal('accountId', currentAccount.$id)]
+		);
 
-    if (!currentUser || currentUser.documents.length === 0) {
-      throw new Error("No user documents found");
-    }
+		if (!currentUser || currentUser.documents.length === 0) {
+			throw new Error('No user documents found');
+		}
 
-    // Map the document to UserData if structure is known and consistent
-    const userDocument = currentUser.documents[0] as unknown as Document;  // First cast to unknown if needed
-    return mapDocumentToUserData(userDocument);  // Convert to UserData using a mapping function
-  } catch (error) {
-    console.error("Failed to fetch current user:", error);
-    return undefined;
-  }
+		// Map the document to UserData if structure is known and consistent
+		const userDocument = currentUser.documents[0] as unknown as Document; // First cast to unknown if needed
+		return mapDocumentToUserData(userDocument); // Convert to UserData using a mapping function
+	} catch (error) {
+		console.error('Failed to fetch current user:', error);
+		return undefined;
+	}
 };
 
 function mapDocumentToUserData(doc: Document): UserData {
-  return {
-    accountId: doc.account_id,
-    email: doc.mail,
-    username: doc.user_name,
-    avatar: doc.profile_picture
-  };
+	return {
+		accountId: doc.account_id,
+		email: doc.mail,
+		username: doc.user_name,
+		avatar: doc.profile_picture,
+	};
 }

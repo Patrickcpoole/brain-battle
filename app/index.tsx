@@ -12,12 +12,16 @@ const App = () => {
 
 	useEffect(() => {
 		const checkForAndRemoveSessions = async () => {
-			const currentSessions = await checkForCurrentSession();
-			console.log('current sessions', currentSessions);
-			if (currentSessions.length > 0) {
-                console.log('removing sessions')
-				removeCurrentSessions();
-			}
+            console.log('checking')
+			const currentSessions = checkForCurrentSession()
+				.then((response) => {
+					console.log('current sessions', response);
+					if (response.length > 0) {
+						console.log('removing sessions')
+						removeCurrentSessions();
+					}
+				})
+				.catch((exception) => (console.error(exception)));
 		};
 		checkForAndRemoveSessions();
 	}, []);
@@ -62,7 +66,8 @@ const App = () => {
 						className='font-clashsemibold text-center text-white'
 						style={{ fontSize: moderateScale(18) }}
 					>
-						Select User
+						{' '}
+						Select User{' '}
 					</Text>
 				</TouchableOpacity>
 			</View>

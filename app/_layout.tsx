@@ -1,13 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { Slot, SplashScreen, Stack } from 'expo-router';
+import { SplashScreen, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
 import React, { useEffect } from 'react';
-
-import { GlobalProvider } from '@/context/GlobalProvider';
 
 SplashScreen.preventAutoHideAsync();
 
 const RootLayout = () => {
+    
 	const [fontsLoaded, error] = useFonts({
 
 		// Loading the Clash Display font files
@@ -32,11 +30,11 @@ const RootLayout = () => {
 
 	useEffect(() => {
 		if (error) throw error;
-
 		if (fontsLoaded) SplashScreen.hideAsync();
 	}, [fontsLoaded, error]);
 
-  if (!fontsLoaded && !error) return null;
+	if (!fontsLoaded && !error) return null;
+	
 	return (
 		<Stack>
 			{/* Stack screen for the entry point */}
@@ -45,15 +43,7 @@ const RootLayout = () => {
 			<Stack.Screen name='(demo)' options={{headerShown: false}} />
 		</Stack>
 	);
+
 };
 
 export default RootLayout;
-
-const styles = StyleSheet.create({
-	container: {
-		display: 'flex',
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});
