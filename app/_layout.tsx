@@ -38,12 +38,20 @@ const RootLayout = () => {
 
   if (!fontsLoaded && !error) return null;
 	return (
-		<Stack>
-			{/* Stack screen for the entry point */}
-			<Stack.Screen name='index' options={{headerShown: false}} />
-			{/* Stack screen for the demo flow */}
-			<Stack.Screen name='(demo)' options={{headerShown: false}} />
-		</Stack>
+		<GlobalProvider>
+			<Stack>
+				{/* Stack screen for the entry point */}
+				<Stack.Screen name='index' options={{headerShown: false}} />
+				{/* Stack screen for the authorization flow */}
+				<Stack.Screen name='(auth)' options={{headerShown: false}} />
+				{/* Stack screen for the main window */}
+				<Stack.Screen name='(tabs)' options={{headerShown: false}} />
+				{/* Stack screen for the profile options */}
+				<Stack.Screen name='(profile)' options={{headerShown: false}} />
+				{/* Stack screen for the game options */}
+				<Stack.Screen name='(game)' options={{headerShown: false}} />
+			</Stack>
+		</GlobalProvider>
 	);
 };
 
