@@ -13,12 +13,12 @@ import { moderateScale, verticalScale } from "@/utils/Mertics";
 import { isiPad } from "@/utils/CommonFun";
 import { BarChart, yAxisSides } from "react-native-gifted-charts";
 import { DailyGraphdata, MonthlyGraphdata } from "@/utils/Data";
+import { LineDataItem } from "@/types";
 const DailyProgressGraph = ({}: any) => {
   return (
     <View>
       <BarChart
         data={DailyGraphdata}
-        textFontSize={20}
         yAxisSide={yAxisSides.RIGHT}
         barBorderRadius={100}
         isAnimated
@@ -27,7 +27,6 @@ const DailyProgressGraph = ({}: any) => {
         height={isiPad ? verticalScale(200) : 180}
         showLine={false}
         dashGap={30}
-        barColor="#f39c12"
         xAxisColor={"#b0b0b0"}
         yAxisColor="transparent"
         rulesType="solid"
@@ -36,7 +35,7 @@ const DailyProgressGraph = ({}: any) => {
         yAxisLabelTexts={["24", "0", "0"]}
         noOfSections={2}
         barWidth={moderateScale(11)}
-        renderTooltip={(item) => (
+        renderTooltip={(item: LineDataItem) => (
           <View
             style={{
               marginBottom: 10,

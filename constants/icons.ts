@@ -12,8 +12,10 @@ import notifications from "../assets/icons/notification.png";
 import faceOff from "../assets/icons/face-off-icon.png";
 import nextArrow from "../assets/icons/next-arrow.png";
 import backArrow from "../assets/icons/back-arrow.png";
+import cross from "../assets/icons/cross.png";
 
 export default {
+  cross,
   nextArrow,
   backArrow,
   logo,
