@@ -43,7 +43,6 @@ const AllTimeProgressGraph = ({}: any) => {
         endFillColor="rgba(255, 179, 0, 0.1)"
         startOpacity={0.3}
         endOpacity={0.1}
-        showStrip={true}
         pointerConfig={{
           pointerStripHeight: 160,
           pointerStripWidth: 2,
@@ -51,8 +50,6 @@ const AllTimeProgressGraph = ({}: any) => {
           pointerColor: "rgba(0,0,0,0.3)",
         }}
         areaChart
-        gradientFill
-        gradientColor={["#FFB300", "rgba(255, 179, 0, 0.1)"]}
       />
     </View>
   );

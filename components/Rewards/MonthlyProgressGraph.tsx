@@ -20,12 +20,12 @@ import {
   yAxisSides,
 } from "react-native-gifted-charts";
 import { MonthlyGraphdata } from "@/utils/Data";
+
 const MonthlyProgressGraph = ({}: any) => {
   return (
     <View>
       <BarChart
         data={MonthlyGraphdata}
-        textFontSize={20}
         yAxisSide={yAxisSides.RIGHT}
         barBorderRadius={100}
         isAnimated
@@ -34,7 +34,6 @@ const MonthlyProgressGraph = ({}: any) => {
         height={isiPad ? verticalScale(200) : 180}
         showLine={false}
         dashGap={30}
-        barColor="#f39c12"
         xAxisColor={"#b0b0b0"}
         yAxisColor="transparent"
         rulesType="solid"

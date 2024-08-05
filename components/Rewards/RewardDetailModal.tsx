@@ -15,6 +15,7 @@ import { moderateScale, verticalScale } from "@/utils/Mertics";
 import CustomText from "@/components/CustomText";
 import { isiPad } from "@/utils/CommonFun";
 import images from "@/constants/images";
+import icons from "@/constants/icons";
 import { appStyles } from "@/utils/appStyles";
 const CustomModal = ({
   modalVisible,
@@ -55,10 +56,7 @@ const CustomModal = ({
             justifyContent: "center",
           }}
         >
-          <Image
-            style={{ width: "70%", height: "70%" }}
-            source={images.cross}
-          />
+          <Image style={{ width: "70%", height: "70%" }} source={icons.cross} />
         </TouchableOpacity>
         <View
           style={{

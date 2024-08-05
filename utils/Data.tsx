@@ -4,24 +4,9 @@ import { colors } from "./colors";
 import { Text, View } from "react-native";
 import { verticalScale } from "./Mertics";
 import { isiPad } from "./CommonFun";
+import { LineDataItem } from "@/types";
 
-interface DataPointLabelComponentProps {
-  // Add any props here if your component uses them
-}
-
-interface LineDataItem {
-  value: number;
-  label: string;
-  frontColor: string;
-  showStrip?: boolean;
-  stripHeight?: number;
-  stripColor?: string;
-  dataPointLabelComponent?: React.FC<DataPointLabelComponentProps>;
-  dataPointLabelShiftY?: number;
-  dataPointLabelShiftX?: number;
-}
-
-export const MonthlyGraphdata = [
+export const MonthlyGraphdata: LineDataItem[] = [
   { value: 300, label: "1", frontColor: "#FFC22F" },
   { value: 1000, label: "2", frontColor: "#FFC22F" },
   { value: 500, label: "3", frontColor: "#FFC22F" },
@@ -37,7 +22,6 @@ export const MonthlyGraphdata = [
 
   // { value: 650, label: '4' },
   { value: 1200, label: "", frontColor: "#FFC22F" },
-  ,
 ];
 
 export const DailyGraphdata: LineDataItem[] = [
@@ -56,7 +40,6 @@ export const DailyGraphdata: LineDataItem[] = [
 
   // { value: 650, label: '4' },
   { value: 1200, label: "", frontColor: "#FFC22F" },
-  ,
 ];
 
 export const AllTimeGraphData: LineDataItem[] = [

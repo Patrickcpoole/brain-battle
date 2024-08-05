@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import * as Progress from "react-native-progress";
 import images from "@/constants/images";
+import icons from "@/constants/icons";
 import CustomText from "../CustomText";
 import { appStyles } from "../../utils/appStyles";
 import { moderateScale, verticalScale } from "../../utils/Mertics";
@@ -122,7 +123,7 @@ const RewardProgress = ({
           <Image
             style={{ width: moderateScale(15), height: moderateScale(15) }}
             resizeMode="cover"
-            source={images.backArrow}
+            source={icons.backArrow}
           />
         </TouchableOpacity>
 
@@ -286,7 +287,7 @@ const RewardProgress = ({
           <Image
             style={{ width: moderateScale(15), height: moderateScale(15) }}
             resizeMode="contain"
-            source={images.nextArrow}
+            source={icons.nextArrow}
           />
         </TouchableOpacity>
       </View>
