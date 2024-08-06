@@ -45,10 +45,30 @@ import elite from "../assets/images/elite.png";
 import mastermind from "../assets/images/mastermind.png";
 import kingQueen from "../assets/images/kingQueen.png";
 import legend from "../assets/images/legend.png";
-
-import demoLogo from "../assets/images/demo-logo.png";
+import blueMap from "../assets/images/blueMap.png";
+import rankBack from "../assets/images/rankBack.png";
+import rank2Back from "../assets/images/rank2Back.png";
+import rank3Back from "../assets/images/rank3Back.png";
+import rank from "../assets/images/rank.png";
+import rank2 from "../assets/images/rank2.png";
+import rank3 from "../assets/images/rank3.png";
+import map2 from "../assets/images/map2.png";
+import rank1 from "../assets/images/rank1.svg";
+import highSchoolMedal from "../assets/images/highSchoolMedal.png";
+import medal from "../assets/images/medal.png";
 
 export default {
+  rankBack,
+  rank1,
+  highSchoolMedal,
+  medal,
+  rank2Back,
+  rank3Back,
+  rank,
+  rank2,
+  rank3,
+  map2,
+  blueMap,
   legend,
   athletics,
   uganda,
@@ -94,7 +114,6 @@ export default {
   monsterBadge,
   sashBadge,
   map,
-  demoLogo,
   brainJester,
   uzbekistan,
 };
