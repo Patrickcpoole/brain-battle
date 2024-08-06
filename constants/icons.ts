@@ -12,9 +12,19 @@ import notifications from "../assets/icons/notification.png";
 import faceOff from "../assets/icons/face-off-icon.png";
 import nextArrow from "../assets/icons/next-arrow.png";
 import backArrow from "../assets/icons/back-arrow.png";
+import back from "../assets/icons/back.png";
 import cross from "../assets/icons/cross.png";
+import send from "../assets/icons/send.png";
+import verified from "../assets/icons/verified.png";
+import leaderboard from "../assets/icons/leaderboard.png";
+import dropdown from "../assets/icons/dropdown.png";
 
 export default {
+  dropdown,
+  leaderboard,
+  back,
+  send,
+  verified,
   cross,
   nextArrow,
   backArrow,
