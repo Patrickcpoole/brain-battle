@@ -1,5 +1,5 @@
 import { Text, TouchableOpacity, View, Image, ScrollView } from "react-native";
-import { moderateScale, verticalScale } from "@/utils/Mertics";
+import { moderateScale, verticalScale } from "@/utils/Metrics";
 import { country } from "@/utils/Data";
 import { appStyles } from "@/utils/appStyles";
 import CustomText from "@/components/CustomText";

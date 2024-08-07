@@ -10,7 +10,7 @@ import {
 import React, { useState } from "react";
 import Modal from "react-native-modal";
 import { windowHeight, windowWidth } from "@/utils/Dimensions";
-import { moderateScale, verticalScale } from "@/utils/Mertics";
+import { moderateScale, verticalScale } from "@/utils/Metrics";
 import { isiPad } from "@/utils/CommonFun";
 import {
   BarChart,

@@ -2,7 +2,7 @@ import images from "@/constants/images";
 
 import { colors } from "./colors";
 import { Text, View } from "react-native";
-import { verticalScale } from "./Mertics";
+import { verticalScale } from "./Metrics";
 import { isiPad } from "./CommonFun";
 import { LineDataItem } from "@/types";
 

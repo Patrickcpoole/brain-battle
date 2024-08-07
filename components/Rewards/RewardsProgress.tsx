@@ -5,7 +5,7 @@ import images from "@/constants/images";
 import icons from "@/constants/icons";
 import CustomText from "../CustomText";
 import { appStyles } from "../../utils/appStyles";
-import { moderateScale, verticalScale } from "../../utils/Mertics";
+import { horizontalScale, verticalScale, moderateScale } from "../../utils/Metrics";
 import { windowWidth } from "../../utils/Dimensions";
 import { colors } from "react-native-swiper-flatlist/src/themes";
 import { isiPad } from "@/utils/CommonFun";
@@ -94,22 +94,22 @@ const RANKS: any = [
 const RewardProgress = ({
   elo,
   setSelectedRanking,
-  selectectedRanking,
+  selectedRanking,
 
-  selectectedRedwardsRankIndex,
-  setSelectectedRedwardsRankIndex,
-  selectectedRewarsRank,
-  setSelectectedRewarsRank,
-  isSelectectedRewarsRank,
-  setIsSelectectedRewarsRank,
+  selectedRewardsRankIndex,
+  setSelectedRewardsRankIndex,
+  selectedRewardsRank,
+  setSelectedRewardsRank,
+  isSelectedRewardsRank,
+  setIsSelectedRewardsRank,
 }: any) => {
-  const item = rewardRanks[selectectedRedwardsRankIndex]; // Accessing only the first item
+  const item = rewardRanks[selectedRewardsRankIndex]; // Accessing only the first item
 
   // console.log("elo", elo);
   // const progress = getProgress(elo);
   // const rank = getRank(elo);
 
-  console.log("progress", selectectedRedwardsRankIndex);
+  console.log("progress", selectedRewardsRankIndex);
 
   return (
     <View style={styles.container}>
@@ -117,14 +117,16 @@ const RewardProgress = ({
         <TouchableOpacity
           activeOpacity={0.5}
           onPress={() => {
-            setSelectectedRedwardsRankIndex(selectectedRedwardsRankIndex - 1);
+            setSelectedRewardsRankIndex(selectedRewardsRankIndex - 1);
           }}
         >
-          <Image
-            style={{ width: moderateScale(15), height: moderateScale(15) }}
-            resizeMode="cover"
-            source={icons.backArrow}
-          />
+          {(item.startName == "Beginner") ? <View style={{ width: moderateScale(15), height: moderateScale(15) }} /> :
+            <Image
+              style={{ width: moderateScale(15), height: moderateScale(15) }}
+              resizeMode="cover"
+              source={icons.backArrow}
+            />
+          }
         </TouchableOpacity>
 
         <View>
@@ -132,7 +134,7 @@ const RewardProgress = ({
             style={{ alignItems: "center" }}
             activeOpacity={0.4}
             onPress={() => {
-              setSelectectedRewarsRank({
+              setSelectedRewardsRank({
                 data: item?.data,
                 name: item?.startName,
                 min: 0,
@@ -140,7 +142,7 @@ const RewardProgress = ({
                 image: item.minImage,
                 shadowColor: item?.minImageShadowColor,
               });
-              setIsSelectectedRewarsRank(true);
+              setIsSelectedRewardsRank(true);
             }}
           >
             <View
@@ -153,8 +155,8 @@ const RewardProgress = ({
               <CustomText
                 fontFam={"ClashDisplay-Medium"}
                 text={item.startName}
-                style={{ textAlign: "center" }}
-                size={11}
+                style={{ width: horizontalScale(150), textAlign: "center" }}
+                size={moderateScale(12)}
                 color={"#7B7B7B"}
               />
             </View>
@@ -213,7 +215,7 @@ const RewardProgress = ({
           <TouchableOpacity
             activeOpacity={0.4}
             onPress={() => {
-              setSelectectedRewarsRank({
+              setSelectedRewardsRank({
                 data: item?.data,
                 name: item?.nextName,
                 min: 0,
@@ -221,7 +223,7 @@ const RewardProgress = ({
                 image: item?.maxImage,
                 shadowColor: item?.maxImageShadowColor,
               });
-              setIsSelectectedRewarsRank(true);
+              setIsSelectedRewardsRank(true);
             }}
             style={{
               alignItems: "center",
@@ -238,8 +240,8 @@ const RewardProgress = ({
               <CustomText
                 fontFam={"ClashDisplay-Medium"}
                 text={item.nextName}
-                style={{ textAlign: "center" }}
-                size={11}
+                style={{ width: horizontalScale(120), textAlign: "center" }}
+                size={moderateScale(12)}
                 color={"#7B7B7B"}
               />
             </View>
@@ -281,14 +283,16 @@ const RewardProgress = ({
         <TouchableOpacity
           activeOpacity={0.5}
           onPress={() => {
-            setSelectectedRedwardsRankIndex(selectectedRedwardsRankIndex + 1);
+            setSelectedRewardsRankIndex(selectedRewardsRankIndex + 1);
           }}
         >
-          <Image
-            style={{ width: moderateScale(15), height: moderateScale(15) }}
-            resizeMode="contain"
-            source={icons.nextArrow}
-          />
+          {(item.nextName == "Legend") ? <View style={{ width: moderateScale(15), height: moderateScale(15) }} /> :
+            <Image
+              style={{ width: moderateScale(15), height: moderateScale(15) }}
+              resizeMode="contain"
+              source={icons.nextArrow}
+            />
+          }
         </TouchableOpacity>
       </View>
     </View>

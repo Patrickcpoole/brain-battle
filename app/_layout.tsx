@@ -48,10 +48,6 @@ const RootLayout = () => {
         <Stack.Screen name="(profile)" options={{ headerShown: false }} />
         {/* Stack screen for the game options */}
         <Stack.Screen name="(game)" options={{ headerShown: false }} />
-        {/* Stack screen for the rewards options */}
-        <Stack.Screen name="(rewards)" options={{ headerShown: false }} />
-        {/* Stack screen for the leaderboard options */}
-        <Stack.Screen name="(leaderboard)" options={{ headerShown: false }} />
       </Stack>
     </GlobalProvider>
   );

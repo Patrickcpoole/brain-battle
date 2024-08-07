@@ -21,7 +21,8 @@ const RequestChallengeContainer = ({ navigation, item }: any) => {
     <View
       style={{
         ...appStyles.row,
-        marginVertical: verticalScale(15),
+        marginTop: verticalScale(15),
+        marginBottom: verticalScale(30),
         alignItems: "center",
         justifyContent:"space-between",
         width:"100%"

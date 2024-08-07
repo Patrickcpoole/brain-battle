@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import Modal from "react-native-modal";
 import { windowHeight } from "@/utils/Dimensions";
 import { colors } from "@/utils/colors";
-import { moderateScale, verticalScale } from "@/utils/Mertics";
+import { moderateScale, verticalScale } from "@/utils/Metrics";
 import CustomText from "@/components/CustomText";
 import { isiPad } from "@/utils/CommonFun";
 import images from "@/constants/images";
@@ -20,7 +20,7 @@ import { appStyles } from "@/utils/appStyles";
 const CustomModal = ({
   modalVisible,
   setModalVisible,
-  selectectedRewarsRank,
+  selectedRewardsRank,
 
   width,
 }: any) => {
@@ -83,7 +83,7 @@ const CustomModal = ({
             }}
           >
             <CustomText
-              text={`${selectectedRewarsRank?.name} Reward Box`}
+              text={`${selectedRewardsRank?.name} Reward Box`}
               size={16}
               fontFam={"ClashDisplay-Bold"}
               color={"#737373"}
@@ -101,7 +101,7 @@ const CustomModal = ({
               <Image
                 style={{ width: "100%", height: "100%" }}
                 resizeMode="contain"
-                source={selectectedRewarsRank?.image}
+                source={selectedRewardsRank?.image}
               />
             </View>
 
@@ -123,7 +123,7 @@ const CustomModal = ({
             color={"#8E8E8E"}
           />
 
-          {selectectedRewarsRank?.data?.map((item: any, index: any) => {
+          {selectedRewardsRank?.data?.map((item: any, index: any) => {
             return (
               <View
                 key={index}

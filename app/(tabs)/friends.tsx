@@ -132,7 +132,7 @@ const Friends = ({ navigation }: any) => {
           }}
         >
           {selectedTab == "All" && (
-            <View style={{ paddingTop: verticalScale(20) }}>
+            <ScrollView style={{ paddingTop: verticalScale(20) }}>
               <CustomText
                 // fontFam={fonts.medium}
                 font="font-clashmedium"
@@ -172,7 +172,7 @@ const Friends = ({ navigation }: any) => {
                 color={colors.gray}
               />
               <RequestChallengeContainer />
-            </View>
+            </ScrollView>
           )}
 
           {selectedTab == "Find Friends" && (
@@ -183,7 +183,7 @@ const Friends = ({ navigation }: any) => {
                 paddingTop: verticalScale(15),
               }}
             >
-              <CustomSearch placeholder="search" />
+              <CustomSearch placeholder="Search" />
 
               <FlatList
                 data={FindFriends}

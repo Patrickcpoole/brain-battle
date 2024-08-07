@@ -10,12 +10,9 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import Rank1 from "@/assets/images/rank1.svg";
-import Rank2 from "@/assets/images/rank2.svg";
-import Rank3 from "@/assets/images/rank3.svg";
 import { appStyles } from "@/utils/appStyles";
 import { colors } from "@/utils/colors";
-import { horizontalScale, moderateScale, verticalScale } from "@/utils/Mertics";
+import { horizontalScale, moderateScale, verticalScale } from "@/utils/Metrics";
 import images from "@/constants/images";
 import icons from "@/constants/icons";
 import CustomText from "@/components/CustomText";
@@ -29,6 +26,9 @@ import FindFriendsContainer from "@/components/Friends/FindFriendsContainer";
 import LeaderBoadUserCard from "@/components/Leaderboard/LeaderBoardUserCard";
 import CountryDropDown from "@/components/CountryDropDown";
 import { SwiperFlatList } from "react-native-swiper-flatlist";
+import Rank1 from "@/components/Leaderboard/Rank1";
+import Rank2 from "@/components/Leaderboard/Rank2";
+import Rank3 from "@/components/Leaderboard/Rank3";
 
 const Leaderboard = ({ navigation }: any) => {
   const [seletedLeaderboard, setSeletedLeaderboard] = useState(1);
@@ -176,7 +176,6 @@ const Leaderboard = ({ navigation }: any) => {
 
   // Function to handle index change on swipe
   const handleIndexChange = ({ item, index }: any) => {
-    console.log("Knkcndkcd", item);
     setSeletedLeaderboard(index + 1);
   };
   return (
@@ -501,13 +500,7 @@ const Leaderboard = ({ navigation }: any) => {
                             image={images.user18}
                             rightImage={images.athletics}
                           />
-
-                          {/* <Rank2
-                            width={moderateScale(110).toString()}
-                            height={verticalScale(
-                              isiPad ? 230 : 200,
-                            ).toString()}
-                          /> */}
+                          <Rank2 width={moderateScale(125)} height={verticalScale(isiPad ? 230 : 200)}/>
                         </View>
                         <View
                           style={{
@@ -523,13 +516,7 @@ const Leaderboard = ({ navigation }: any) => {
                             rightImage={images.highSchoolMedal}
                             medal={images.medal}
                           />
-
-                          {/* <Rank1
-                            width={moderateScale(100).toString()}
-                            height={verticalScale(
-                              isiPad ? 190 : 170,
-                            ).toString()}
-                          /> */}
+                          <Rank1 width={moderateScale(125)} height={verticalScale(isiPad ? 190 : 170)}/>
                         </View>
                         <View
                           style={{
@@ -544,16 +531,8 @@ const Leaderboard = ({ navigation }: any) => {
                             image={images.user20}
                             rightImage={images.roosevelt}
                           />
-
-                          {/* <Rank3
-                            width={moderateScale(100).toString()}
-                            height={verticalScale(
-                              isiPad ? 210 : 180,
-                            ).toString()}
-                          /> */}
+                          <Rank3 width={moderateScale(125)} height={verticalScale(isiPad ? 210 : 180)}/>
                         </View>
-
-                        <View></View>
                       </View>
                       <View
                         style={{

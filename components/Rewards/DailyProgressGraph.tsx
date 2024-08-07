@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { windowHeight, windowWidth } from "@/utils/Dimensions";
-import { moderateScale, verticalScale } from "@/utils/Mertics";
+import { moderateScale, verticalScale } from "@/utils/Metrics";
 import { isiPad } from "@/utils/CommonFun";
 import { BarChart, yAxisSides } from "react-native-gifted-charts";
 import { DailyGraphdata, MonthlyGraphdata } from "@/utils/Data";

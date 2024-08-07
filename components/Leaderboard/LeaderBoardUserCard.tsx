@@ -6,7 +6,7 @@ import {
   View,
 } from "react-native";
 import { appStyles } from "@/utils/appStyles";
-import { horizontalScale, moderateScale, verticalScale } from "@/utils/Mertics";
+import { horizontalScale, moderateScale, verticalScale } from "@/utils/Metrics";
 import icons from "@/constants/icons";
 import CustomText from "@/components/CustomText";
 import { fonts } from "@/utils/fonts";
